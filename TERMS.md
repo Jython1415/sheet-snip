@@ -1,4 +1,4 @@
-# Terms of Service for Sheets JSON Export
+# Terms of Service for Sheet Snip
 
 **Last Updated**: November 30, 2025
 
@@ -7,7 +7,7 @@
 This add-on is distributed under the MIT License. You are free to use, copy,
 modify, and redistribute this software subject to the terms of that license.
 
-See https://github.com/Jython1415/sheets-json-export/blob/main/LICENSE for the full license text.
+See https://github.com/Jython1415/sheet-snip/blob/main/LICENSE for the full license text.
 
 ## Disclaimer
 
@@ -36,7 +36,7 @@ This is an independent add-on. Google does not endorse, support, or provide warr
 Support is provided on a best-effort basis through GitHub. No SLAs, guaranteed
 response times, or support commitments are offered.
 
-For issues, feature requests, or questions, visit: https://github.com/Jython1415/sheets-json-export/issues
+For issues, feature requests, or questions, visit: https://github.com/Jython1415/sheet-snip/issues
 
 ## Compliance
 

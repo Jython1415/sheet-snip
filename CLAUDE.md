@@ -74,7 +74,7 @@ gh run list --workflow=deploy.yml
 
 ### Immediate
 1. Continue testing with different data scenarios
-2. Consider cleaning up temp files: `temp.js`, `temp.html`, `sheets-json-export-setup-plan.md`
+2. Consider cleaning up temp files: `temp.js`, `temp.html`, `sheet-snip-setup-plan.md`
 
 ### Future (See GitHub Issues)
 - Issue #1: Privacy policy research

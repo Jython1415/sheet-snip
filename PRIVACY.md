@@ -1,16 +1,16 @@
-# Privacy Policy for Sheets JSON Export
+# Privacy Policy for Sheet Snip
 
 **Last Updated**: November 30, 2025
 
 ## Overview
 
-Sheets JSON Export is a Google Sheets add-on that exports selected spreadsheet ranges to JSON format. This privacy policy explains our data practices.
+Sheet Snip is a Google Sheets add-on that exports selected spreadsheet ranges to JSON format. This privacy policy explains our data practices.
 
 ## Key Principle: We Do Not Collect Your Data
 
-Sheets JSON Export is designed with privacy at its core. We do not collect, store, transmit, or access your spreadsheet data.
+Sheet Snip is designed with privacy at its core. We do not collect, store, transmit, or access your spreadsheet data.
 
-## How Sheets JSON Export Works
+## How Sheet Snip Works
 
 1. You authorize the add-on to read your Google Sheet (read-only access)
 2. The add-on processes your sheet data entirely within Google Sheets
@@ -20,7 +20,7 @@ Sheets JSON Export is designed with privacy at its core. We do not collect, stor
 
 ## OAuth Scopes We Request
 
-Sheets JSON Export requests the following permissions:
+Sheet Snip requests the following permissions:
 
 - **spreadsheets.currentonly**: To read data from your currently open spreadsheet only (we cannot modify your sheets or access other spreadsheets)
 - **script.container.ui**: To display the export dialog and clipboard interface
@@ -77,7 +77,7 @@ We do not sell, buy, or share information. We do not collect personal informatio
 
 ## Open Source
 
-Sheets JSON Export is MIT-licensed open source. You can audit our code at: https://github.com/Jython1415/sheets-json-export
+Sheet Snip is MIT-licensed open source. You can audit our code at: https://github.com/Jython1415/sheet-snip
 
 The source code publicly demonstrates that no data collection occurs.
 

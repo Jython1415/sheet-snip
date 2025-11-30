@@ -1,4 +1,4 @@
-# Sheets JSON Export
+# Sheet Snip
 
 Export Google Sheets ranges to LLM-friendly JSON format.
 
