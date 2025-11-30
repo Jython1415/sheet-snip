@@ -10,7 +10,7 @@
   "addOns": {
     "common": {
       "name": "Sheet Snip",
-      "logoUrl": "https://www.gstatic.com/images/branding/product/1x/apps_script_64dp.png",
+      "logoUrl": "https://raw.githubusercontent.com/Jython1415/sheet-snip/main/icon.png",
       "useLocaleFromApp": true
     },
     "sheets": {}
