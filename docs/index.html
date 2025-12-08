@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sheet Snip - Export Google Sheets ranges to LLM-friendly JSON format">
+    <title>Sheet Snip - Google Sheets Export Tool</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background-color: #f9fafb;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #111827;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.2em;
+            color: #6b7280;
+            margin-bottom: 20px;
+        }
+
+        .badges {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .badge {
+            background-color: #dbeafe;
+            color: #1e40af;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        section {
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #111827;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        .links {
+            margin-top: 20px;
+        }
+
+        .links a {
+            display: inline-block;
+            margin: 8px 10px 8px 0;
+            padding: 10px 20px;
+            background-color: #3b82f6;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.2s;
+        }
+
+        .links a:hover {
+            background-color: #2563eb;
+        }
+
+        .links a.secondary {
+            background-color: #6b7280;
+        }
+
+        .links a.secondary:hover {
+            background-color: #4b5563;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 2px solid #e5e7eb;
+            color: #6b7280;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        code {
+            background-color: #f3f4f6;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sheet Snip</h1>
+            <p class="tagline">Export Google Sheets ranges to LLM-friendly JSON format</p>
+            <div class="badges">
+                <span class="badge">Open Source</span>
+                <span class="badge">Privacy-Focused</span>
+                <span class="badge">No Data Collection</span>
+            </div>
+        </header>
+
+        <section>
+            <h2>What is Sheet Snip?</h2>
+            <p>Sheet Snip is a Google Sheets add-on that makes it easy to export your spreadsheet data to JSON format, optimized for use with Large Language Models (LLMs) like ChatGPT, Claude, and others.</p>
+            <p style="margin-top: 15px;">Select any range in your sheet, export it with one click, and paste the structured data directly into your AI conversations.</p>
+        </section>
+
+        <section>
+            <h2>Features</h2>
+            <ul>
+                <li>Export cell values to JSON format</li>
+                <li>Export formulas to JSON format</li>
+                <li>Export both values and formulas simultaneously</li>
+                <li>One-click clipboard copy</li>
+                <li>Privacy-focused: no data collection or external transmission</li>
+                <li>Works entirely within Google Sheets environment</li>
+                <li>Open source and auditable code</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>How It Works</h2>
+            <ul>
+                <li>Select a range in your Google Sheet</li>
+                <li>Click "Sheet Snip" in the Extensions menu</li>
+                <li>Choose your export format (values, formulas, or both)</li>
+                <li>Preview the JSON output in the dialog</li>
+                <li>Click "Copy to Clipboard" and paste into your LLM</li>
+            </ul>
+            <p style="margin-top: 15px;">All processing happens entirely within your browser and Google Sheets. Your data never leaves your device.</p>
+        </section>
+
+        <section>
+            <h2>Privacy & Security</h2>
+            <p>Sheet Snip is built with privacy as a core principle:</p>
+            <ul>
+                <li>Zero data collection from your spreadsheets</li>
+                <li>No external server communication</li>
+                <li>Client-side processing only</li>
+                <li>Minimal OAuth scopes (read-only access to current sheet)</li>
+                <li>Open source code for full transparency</li>
+            </ul>
+            <p style="margin-top: 15px;">Read our full <a href="privacy.html">Privacy Policy</a> for details.</p>
+        </section>
+
+        <section>
+            <h2>Installation</h2>
+            <p>Sheet Snip will soon be available on the <a href="https://workspace.google.com/marketplace" target="_blank">Google Workspace Marketplace</a>.</p>
+            <p style="margin-top: 15px;">In the meantime, you can install it manually using the source code from our GitHub repository.</p>
+        </section>
+
+        <section>
+            <h2>Links</h2>
+            <div class="links">
+                <a href="https://github.com/Jython1415/sheet-snip" target="_blank">GitHub Repository</a>
+                <a href="https://github.com/Jython1415/sheet-snip/issues" target="_blank" class="secondary">Report Issues</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+        </section>
+
+        <footer>
+            <p>Sheet Snip is open source software licensed under the <a href="https://github.com/Jython1415/sheet-snip/blob/main/LICENSE" target="_blank">MIT License</a>.</p>
+            <p style="margin-top: 10px;">Created by <a href="https://joshuashew.com">Joshua Shew</a></p>
+        </footer>
+    </div>
+</body>
+</html>
