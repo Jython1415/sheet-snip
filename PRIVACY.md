@@ -4,7 +4,7 @@
 
 ## Overview
 
-Sheet Snip is a Google Sheets add-on that exports selected spreadsheet ranges to JSON format. This privacy policy explains our data practices.
+Sheet Snip is a Google Sheets add-on that exports selected spreadsheet ranges to Markdown-KV or XML format. This privacy policy explains our data practices.
 
 ## Key Principle: We Do Not Collect Your Data
 
@@ -14,8 +14,8 @@ Sheet Snip is designed with privacy at its core. We do not collect, store, trans
 
 1. You authorize the add-on to read your Google Sheet (read-only access)
 2. The add-on processes your sheet data entirely within Google Sheets
-3. You preview the JSON output in a modal dialog
-4. You copy the JSON to your clipboard
+3. You preview the formatted output in a modal dialog
+4. You copy the data to your clipboard
 5. The data never leaves your device and is not stored by us
 
 ## OAuth Scopes We Request
@@ -38,7 +38,7 @@ We collect ZERO data about your spreadsheets:
 ## Data Security
 
 Your data security is ensured by its client-side processing:
-- All JSON generation happens entirely within Google Sheets and your browser
+- All data formatting happens entirely within Google Sheets and your browser
 - No transmission to external servers
 - Uses HTTPS encryption for your connection to Google services
 - No persistent storage of sheet contents in our systems
@@ -61,7 +61,7 @@ Your spreadsheet data is yours. You may:
 The use of information received from Workspace APIs will adhere to the [Google User Data Policy](https://developers.google.com/terms/api-services-user-data-policy), including the Limited Use requirements.
 
 We certify that we:
-- Only use data to provide the JSON export functionality
+- Only use data to provide the export functionality
 - Do not transfer, share, or sell your data to third parties
 - Do not use your data for advertising, credit decisions, or training AI models
 - Do not use data beyond what is necessary for the stated purpose

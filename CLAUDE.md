@@ -22,14 +22,15 @@ sheet-snip/
 ### Code.gs
 Main script with:
 - `onOpen()` - Creates custom menu in Sheets
-- `exportValuesJSON()` - Export cell values as JSON
-- `exportFormulasJSON()` - Export formulas as JSON
-- `exportBothJSON()` - Export both values and formulas
-- Helper functions for building JSON structures
+- `exportRowBasedMarkdown()` - Export data as row-based Markdown-KV
+- `exportColumnBasedMarkdown()` - Export data as column-based Markdown-KV
+- `exportFormulasXML()` - Export formulas as XML
+- `exportGeneralXML()` - Export all data as XML
+- Helper functions for building export formats
 
 ### ClipboardDialog.html
 Modal dialog that:
-- Displays JSON preview in textarea
+- Displays export preview in textarea
 - Copies to clipboard (supports modern API + fallback)
 - Auto-closes after successful copy
 

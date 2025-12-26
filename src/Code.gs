@@ -396,7 +396,7 @@ function buildGeneralXML(range) {
  */
 function showClipboardDialog(data, dataType) {
   const htmlTemplate = HtmlService.createTemplateFromFile('ClipboardDialog');
-  htmlTemplate.jsonData = data;
+  htmlTemplate.exportData = data;
   htmlTemplate.dataType = dataType;
 
   const html = htmlTemplate.evaluate()
