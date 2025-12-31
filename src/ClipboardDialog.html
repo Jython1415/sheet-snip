@@ -5,77 +5,100 @@
     <style>
       body {
         font-family: Arial, sans-serif;
-        padding: 20px;
+        padding: 16px;
         margin: 0;
       }
-      
+
       .container {
         display: flex;
         flex-direction: column;
         height: 100%;
       }
-      
+
       .message {
-        margin-bottom: 15px;
-        font-size: 14px;
+        margin-bottom: 12px;
+        font-size: 13px;
+        color: #202124;
       }
-      
+
       .success {
         color: #0f9d58;
         font-weight: bold;
         display: none;
         margin-bottom: 10px;
+        font-size: 13px;
       }
-      
+
       .preview-container {
         flex-grow: 1;
-        margin-bottom: 15px;
+        margin-bottom: 12px;
+        display: flex;
+        flex-direction: column;
       }
-      
+
       .preview {
         width: 100%;
-        height: 250px;
+        flex: 1;
+        min-height: 150px;
         font-family: 'Courier New', monospace;
         font-size: 11px;
         padding: 10px;
-        border: 1px solid #ccc;
+        border: 1px solid #dadce0;
         border-radius: 4px;
         overflow: auto;
-        background-color: #f5f5f5;
+        background-color: #f8f9fa;
         resize: vertical;
       }
-      
+
       .button-container {
         display: flex;
-        gap: 10px;
+        gap: 8px;
       }
-      
+
       button {
-        padding: 10px 20px;
-        font-size: 14px;
+        padding: 8px 16px;
+        font-size: 13px;
         cursor: pointer;
         border: none;
         border-radius: 4px;
         transition: background-color 0.2s;
+        font-weight: 500;
       }
-      
+
       .copy-button {
         background-color: #4285f4;
         color: white;
         flex-grow: 1;
       }
-      
+
       .copy-button:hover {
         background-color: #3367d6;
       }
-      
+
+      .copy-button:focus {
+        outline: 2px solid #4285f4;
+        outline-offset: 2px;
+      }
+
       .close-button {
         background-color: #f1f3f4;
-        color: #5f6368;
+        color: #3c4043;
       }
-      
+
       .close-button:hover {
         background-color: #e8eaed;
+      }
+
+      .close-button:focus {
+        outline: 2px solid #dadce0;
+        outline-offset: 2px;
+      }
+
+      .keyboard-hint {
+        font-size: 11px;
+        color: #80868b;
+        margin-top: 8px;
+        line-height: 1.4;
       }
     </style>
   </head>
@@ -84,22 +107,28 @@
       <div class="message">
         Ready to copy <strong><?= dataType ?></strong> to clipboard.
       </div>
-      
+
       <div class="success" id="successMessage">
         ✓ Copied to clipboard!
       </div>
-      
+
       <div class="preview-container">
         <textarea class="preview" id="dataPreview" readonly><?= exportData ?></textarea>
       </div>
-      
+
       <div class="button-container">
-        <button class="copy-button" onclick="copyToClipboard()">
+        <button class="copy-button" id="copyButton" onclick="copyToClipboard()">
           Copy to Clipboard
         </button>
-        <button class="close-button" onclick="google.script.host.close()">
+        <button class="close-button" onclick="closeSidebar()">
           Close
         </button>
+      </div>
+
+      <div class="keyboard-hint">
+        Keyboard shortcuts:<br>
+        <strong>Enter</strong> or <strong>Ctrl+C</strong> to copy<br>
+        <strong>Esc</strong> to close
       </div>
     </div>
 
@@ -107,7 +136,7 @@
       function copyToClipboard() {
         const textarea = document.getElementById('dataPreview');
         textarea.select();
-        
+
         try {
           // Try modern clipboard API first
           if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -127,11 +156,11 @@
           fallbackCopy(textarea);
         }
       }
-      
+
       function fallbackCopy(textarea) {
         textarea.focus();
         textarea.select();
-        
+
         try {
           const successful = document.execCommand('copy');
           if (successful) {
@@ -143,20 +172,42 @@
           alert('Copy failed. Please manually select and copy the text.');
         }
       }
-      
+
       function showSuccess() {
         const successMsg = document.getElementById('successMessage');
         successMsg.style.display = 'block';
-        
+
         // Auto-close after 1.5 seconds
         setTimeout(() => {
           google.script.host.close();
         }, 1500);
       }
-      
-      // Auto-select text on load for easy manual copying if needed
+
+      function closeSidebar() {
+        google.script.host.close();
+      }
+
+      // Initialize on load
       window.onload = function() {
-        document.getElementById('dataPreview').focus();
+        // Auto-focus the copy button for keyboard accessibility
+        const copyButton = document.getElementById('copyButton');
+        copyButton.focus();
+
+        // Set up keyboard shortcuts
+        document.addEventListener('keydown', function(event) {
+          // Enter or Ctrl+C to copy
+          if (event.key === 'Enter' || (event.ctrlKey && event.key === 'c') || (event.metaKey && event.key === 'c')) {
+            if (event.key === 'Enter' || event.ctrlKey || event.metaKey) {
+              event.preventDefault();
+              copyToClipboard();
+            }
+          }
+          // Escape to close sidebar
+          else if (event.key === 'Escape') {
+            event.preventDefault();
+            closeSidebar();
+          }
+        });
       };
     </script>
   </body>
