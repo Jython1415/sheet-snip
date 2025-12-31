@@ -4,7 +4,7 @@
 
 ## Overview
 
-Sheet Snip is a Google Sheets add-on that exports selected spreadsheet ranges to Markdown-KV or XML format. This privacy policy explains our data practices.
+Sheet Snip is a Google Sheets add-on that exports selected spreadsheet ranges to structured formats. This privacy policy explains our data practices.
 
 ## Key Principle: We Do Not Collect Your Data
 

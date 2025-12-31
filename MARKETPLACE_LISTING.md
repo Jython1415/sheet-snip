@@ -1,15 +1,15 @@
 # Sheet Snip - Google Workspace Marketplace Listing
 
 ## Short Description (80 chars max)
-Export Google Sheets™ ranges to LLM-friendly JSON format
+Export Google Sheets™ ranges to LLM-friendly structured formats
 
 ## Detailed Description (UPDATED with trademarks and more content)
 
-Sheet Snip makes it easy to export your Google Sheets™ data to JSON format, optimized for use with Large Language Models like ChatGPT, Claude, and others.
+Sheet Snip makes it easy to export your Google Sheets™ data in structured formats optimized for use with Large Language Models like ChatGPT, Claude, and others.
 
 ### FEATURES
-• Export cell values to JSON format
-• Export formulas to JSON format
+• Export data in structured formats (row-based or column-based)
+• Export formulas in structured format
 • Export both values and formulas simultaneously
 • One-click clipboard copy
 • Simple, intuitive interface
@@ -24,10 +24,10 @@ Getting started with Sheet Snip is simple:
    - Values only (cell contents)
    - Formulas only (cell formulas)
    - Both values and formulas together
-4. **Preview the output**: Review the JSON structure in the dialog
+4. **Preview the output**: Review the formatted output in the dialog
 5. **Copy to clipboard**: One-click copy, ready to paste into your AI tool
 
-The exported JSON is structured and formatted to be easily understood by Large Language Models, making it perfect for:
+The exported data is structured and formatted to be easily understood by Large Language Models, making it perfect for:
 - Data analysis with AI assistants
 - Sharing spreadsheet structures with colleagues
 - Documenting complex formulas
@@ -77,7 +77,7 @@ Need help? Have questions?
 **Google Sheets™ is a trademark of Google LLC**
 
 ## Post Install Tip
-Open any Google Sheet™, select a range, then go to Extensions > Sheet Snip to export your data to JSON format.
+Open any Google Sheet™, select a range, then go to Extensions > Sheet Snip to export your data in structured format.
 
 ## Category
 Productivity

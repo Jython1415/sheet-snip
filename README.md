@@ -6,9 +6,9 @@ Export Google Sheets ranges to LLM-friendly format.
 
 ## Features
 
-- Export data in Markdown-KV format (row-based or column-based)
-- Export formulas in XML format
-- Export all data in XML format
+- Export data in structured formats (row-based or column-based variations)
+- Export formulas in structured format
+- Export all data in structured format
 - One-click clipboard copy
 - Privacy-focused: no data collection or external transmission
 - Works entirely within Google Sheets environment
