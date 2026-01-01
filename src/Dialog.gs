@@ -7,7 +7,7 @@
  */
 
 /**
- * Shows a dialog that displays data for copying to clipboard
+ * Shows a sidebar that displays data for copying to clipboard
  */
 function showClipboardDialog(data, dataType) {
   const htmlTemplate = HtmlService.createTemplateFromFile('ClipboardDialog');
@@ -15,8 +15,7 @@ function showClipboardDialog(data, dataType) {
   htmlTemplate.dataType = dataType;
 
   const html = htmlTemplate.evaluate()
-    .setWidth(500)
-    .setHeight(400);
+    .setWidth(300);
 
-  SpreadsheetApp.getUi().showModalDialog(html, 'Export Data');
+  SpreadsheetApp.getUi().showSidebar(html);
 }
