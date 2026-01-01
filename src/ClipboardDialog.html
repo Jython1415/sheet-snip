@@ -50,6 +50,12 @@
         resize: vertical;
       }
 
+      .preview:focus {
+        outline: 2px solid #4285f4;
+        outline-offset: -1px;
+        border-color: #4285f4;
+      }
+
       .button-container {
         display: flex;
         gap: 8px;
@@ -113,14 +119,14 @@
       </div>
 
       <div class="preview-container">
-        <textarea class="preview" id="dataPreview" readonly><?= exportData ?></textarea>
+        <textarea class="preview" id="dataPreview" tabindex="1" readonly><?= exportData ?></textarea>
       </div>
 
       <div class="button-container">
-        <button class="copy-button" id="copyButton" onclick="copyToClipboard()">
+        <button class="copy-button" id="copyButton" tabindex="2" onclick="copyToClipboard()">
           Copy to Clipboard
         </button>
-        <button class="close-button" onclick="closeSidebar()">
+        <button class="close-button" tabindex="3" onclick="closeSidebar()">
           Close
         </button>
       </div>
