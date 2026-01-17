@@ -40,6 +40,16 @@ Modal dialog that:
 2. GitHub Actions → `clasp push`
 3. Updates live in Apps Script
 
+## Testing New Features
+
+Before merging to `main`:
+1. Create a feature branch and make your changes in `src/`
+2. Run `clasp push` to deploy to your Apps Script project
+3. Test the add-on in a Google Sheet
+4. Once verified, create a PR and merge to `main`
+
+**Note:** Merging to `main` triggers GitHub Actions to run `clasp push`, updating the Apps Script project.
+
 ## Development Commands
 
 ```bash
