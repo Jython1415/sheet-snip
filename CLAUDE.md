@@ -49,15 +49,16 @@ When testing new features before rolling them out to users:
    git checkout -b feature/my-feature
    ```
 
-2. **Make your changes locally** in the `src/` directory
+2. **Make your changes locally** in the `src/` directory (edit the files on your machine)
 
-3. **Test locally before merging**
+3. **Push to Apps Script and test**
    ```bash
-   # Push changes to your Apps Script project (updates dev deployment)
+   # Push changes to your Apps Script project
    clasp push
 
-   # Test the add-on in a Google Sheet
-   # Open a Sheet and verify the feature works as expected
+   # This updates your personal Apps Script deployment
+   # Now open a Google Sheet and test the add-on there
+   # The code runs in Google Apps Script, not on your local machine
    ```
 
 4. **Once verified, merge to main**
@@ -67,7 +68,7 @@ When testing new features before rolling them out to users:
    # GitHub Actions will automatically deploy to production
    ```
 
-**Note:** The current workflow deploys directly to production on every push to `main`. Testing on feature branches with `clasp push` allows you to validate changes before they go live to all users.
+**Note:** The current workflow deploys directly to production on every push to `main`. Testing on feature branches with `clasp push` allows you to validate changes in a real Google Sheet before they go live to all users.
 
 ## Development Commands
 
