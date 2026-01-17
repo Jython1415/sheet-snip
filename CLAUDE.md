@@ -42,33 +42,13 @@ Modal dialog that:
 
 ## Testing New Features
 
-When testing new features before rolling them out to users:
+Before merging to `main`:
+1. Create a feature branch and make your changes in `src/`
+2. Run `clasp push` to deploy to your Apps Script project
+3. Test the add-on in a Google Sheet
+4. Once verified, create a PR and merge to `main`
 
-1. **Create a feature branch** (recommended naming: `feature/description`)
-   ```bash
-   git checkout -b feature/my-feature
-   ```
-
-2. **Make your changes locally** in the `src/` directory (edit the files on your machine)
-
-3. **Push to Apps Script and test**
-   ```bash
-   # Push changes to your Apps Script project
-   clasp push
-
-   # This updates your personal Apps Script deployment
-   # Now open a Google Sheet and test the add-on there
-   # The code runs in Google Apps Script, not on your local machine
-   ```
-
-4. **Once verified, merge to main**
-   ```bash
-   git push origin feature/my-feature
-   # Create PR and merge to main
-   # GitHub Actions will automatically deploy to production
-   ```
-
-**Note:** The current workflow deploys directly to production on every push to `main`. Testing on feature branches with `clasp push` allows you to validate changes in a real Google Sheet before they go live to all users.
+**Note:** Merging to `main` triggers GitHub Actions to run `clasp push`, updating the Apps Script project.
 
 ## Development Commands
 
